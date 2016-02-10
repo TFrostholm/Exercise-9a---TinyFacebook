@@ -14,6 +14,7 @@ namespace Sandbox
         private string statusText;
         private int likes;
         private int dislikes;
+        private int numberOfReads;
 
         // Create the Status - initially, the status has zero likes
         // and zero dislikes
@@ -21,6 +22,7 @@ namespace Sandbox
         public Status(string statusText)
         {
             this.statusText = statusText;
+            this.numberOfReads = 0;
             this.likes = 0;
             this.dislikes = 0;
         }
@@ -34,6 +36,11 @@ namespace Sandbox
         public void AddOneDislike()
         {
             dislikes = dislikes + 1;
+        }
+
+        public void AddReadCount()
+        {
+            numberOfReads++;
         }
 
         //Accessors (Methods that return information)
@@ -50,6 +57,16 @@ namespace Sandbox
         public int GetNoOfDislikes()
         {
             return dislikes;
+        }
+
+        public int GetNumberOfReads()
+        {
+            return numberOfReads;
+        }
+
+        public int ReadStatusMultiple(int count)
+        {
+            return numberOfReads = numberOfReads + count;            
         }
     }
 }
